@@ -7,7 +7,7 @@
 - We'll talk about why you made the changes you did, how you did them, and just generally talk about other development principles using this code-base as our common ground.  
 - We're only looking for refactorings here. The overall behavior of the code should not change. However, you are permitted to change the public interface if you deem it necessary.
 - Fork this repo and make your changes there.  We want to be able to see the resulting commits and code (ideally during your on-site interview).
-- While we want you to be proud of what you do, **please** - Target spending about an hour, up to 3 hours hours on this, and don't stress out. 😊
+- While we want you to be proud of what you do, **please** - Target spending about an hour, up to 3 hours on this, and don't stress out. 😊
 
 ## Goal
 The aim of this Kata is to refactor the code into a state that you would be happy leaving for your peers (or your future self!) to work on.  
