@@ -2,10 +2,10 @@
 
 ## Purpose and guidelines
 
-- We use this kata as a basis for discussion.  
+- We use this kata as a basis for evaluating your technical skills, decision making and further discussion.  
 - Only care about the C# version of the kata.  We haven't prepared the TypeScript or JavaScript versions.
 - We'll talk about why you made the changes you did, how you did them, and just generally talk about other development principles using this code-base as our common ground.  
-- We're only looking for refactorings here. The overall behavior of the code should not change. However, you are permitted to change the public interface if you deem it necessary.
+- We're primarily looking for code refactoring. The overall behavior of the code should not change - it should always pass the existing tests. However, you are permitted to change the public interface if you deem it necessary.
 - Fork this repo and make your changes there.  We want to be able to see the resulting commits and code (ideally during your on-site interview).
 - While we want you to be proud of what you do, **please** - Target spending about an hour, up to 3 hours on this, and don't stress out. 😊
 
@@ -15,6 +15,7 @@ As it stands, this scoring code was developed as a 'temporary' solution, that qu
 
 ## Considerations
 
+* The resulting code should reflect something you think is nearly production-ready, and something you're happy to attach your name to.
 * We're looking for incremental improvements, so commit as often as you can. 
 * Use the tests to provide feedback on your changes.
 * Ask yourself:
