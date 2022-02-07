@@ -13,6 +13,9 @@ namespace Tennis
             this.player2Name = player2Name;
         }
 
+        /**
+         * Increase points for given player.
+         */
         public void WonPoint(string playerName)
         {
             if (playerName == player1Name)
@@ -32,46 +35,40 @@ namespace Tennis
         public string GetScore()
         {
             string score = "";
-            var tempScore = 0;
             if (player1Score == player2Score)
             {
-                switch (player1Score)
+                score = player1Score switch
                 {
-                    case 0:
-                        score = "Love-All";
-                        break;
-                    case 1:
-                        score = "Fifteen-All";
-                        break;
-                    case 2:
-                        score = "Thirty-All";
-                        break;
-                    default:
-                        score = "Deuce";
-                        break;
-
-                }
+                    0 => "Love-All",
+                    1 => "Fifteen-All",
+                    2 => "Thirty-All",
+                    _ => "Deuce",
+                };
             }
             else if (player1Score >= 4 || player2Score >= 4)
             {
                 // Past the point of deuce and just waiting for someone to win by 2
                 var minusResult = player1Score - player2Score;
-                if (minusResult == 1) score = "Advantage player1"; // TODO: remove hard-coded 'player1' and 'player2'
-                else if (minusResult == -1) score = "Advantage player2";
-                else if (minusResult >= 2) score = "Win for player1";
-                else score = "Win for player2";
+                if (minusResult == 1) score = $"Advantage {player1Name}";
+                else if (minusResult == -1) score = $"Advantage {player2Name}";
+                else if (minusResult >= 2) score = $"Win for {player1Name}";
+                else score = $"Win for {player2Name}";
             }
             else
             {
                 // Return score in player1Score - player2Score format, e.g. 'Love-Thirty'
-                score += getScoreString(player1Score);
+                score += GetScoreString(player1Score);
                 score += "-";
-                score += getScoreString(player2Score);
+                score += GetScoreString(player2Score);
             }
             return score;
         }
 
-        private string getScoreString(int score)
+        /**
+         * Returns the tennis term for the current 
+         * number of points given.
+         */
+        private string GetScoreString(int score)
         {
             return score switch
             {
