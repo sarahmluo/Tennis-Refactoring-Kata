@@ -42,17 +42,23 @@ namespace Tennis
                     0 => "Love-All",
                     1 => "Fifteen-All",
                     2 => "Thirty-All",
-                    _ => "Deuce",
+                    _ => "Deuce"
                 };
             }
             else if (player1Score >= 4 || player2Score >= 4)
             {
                 // Past the point of deuce and just waiting for someone to win by 2
-                var minusResult = player1Score - player2Score;
-                if (minusResult == 1) score = $"Advantage {player1Name}";
-                else if (minusResult == -1) score = $"Advantage {player2Name}";
-                else if (minusResult >= 2) score = $"Win for {player1Name}";
-                else score = $"Win for {player2Name}";
+                var scoreDiff = player1Score - player2Score;
+                if (player1Score > player2Score)
+                {
+                    if (scoreDiff >= 2) score = $"Win for {player1Name}";
+                    else score = $"Advantage {player1Name}";
+                }
+                else
+                {
+                    if (scoreDiff <= -2) score = $"Win for {player2Name}";
+                    else score = $"Advantage {player2Name}";
+                }
             }
             else
             {
