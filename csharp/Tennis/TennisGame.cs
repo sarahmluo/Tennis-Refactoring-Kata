@@ -64,41 +64,23 @@ namespace Tennis
             else
             {
                 // Return score in player1Score - player2Score format, e.g. 'Love-Thirty'
-                switch (player1Score)
-                {
-                    case 0:
-                        score += "Love";
-                        break;
-                    case 1:
-                        score += "Fifteen";
-                        break;
-                    case 2:
-                        score += "Thirty";
-                        break;
-                    case 3:
-                        score += "Forty";
-                        break;
-                }
-
+                score += getScoreString(player1Score);
                 score += "-";
-
-                switch (player2Score)
-                {
-                    case 0:
-                        score += "Love";
-                        break;
-                    case 1:
-                        score += "Fifteen";
-                        break;
-                    case 2:
-                        score += "Thirty";
-                        break;
-                    case 3:
-                        score += "Forty";
-                        break;
-                }
+                score += getScoreString(player2Score);
             }
             return score;
+        }
+
+        private string getScoreString(int score)
+        {
+            return score switch
+            {
+                0 => "Love",
+                1 => "Fifteen",
+                2 => "Thirty",
+                3 => "Forty",
+                _ => ""
+            };
         }
     }
 }
